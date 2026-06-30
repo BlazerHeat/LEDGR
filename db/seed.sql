@@ -4,9 +4,9 @@
 BEGIN;
 
 -- users (3 rows)
-INSERT INTO "users" ("id", "email", "passwordHash", "name", "role", "avatarColor") VALUES ('user_vatsal', 'vatsal.ghoghari@dal.ca', '$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW', 'Vatsal Ghoghari', 'USER', '#7C3AED');
-INSERT INTO "users" ("id", "email", "passwordHash", "name", "role", "avatarColor") VALUES ('user_marcus', 'marcus.bennett@ledgr.app', '$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW', 'Marcus Bennett', 'USER', '#0EA5E9');
-INSERT INTO "users" ("id", "email", "passwordHash", "name", "role", "avatarColor") VALUES ('user_admin', 'admin@ledgr.app', '$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW', 'LEDGR Admin', 'ADMIN', '#111827');
+INSERT INTO "users" ("id", "email", "passwordHash", "name", "role", "avatarColor") VALUES ('user_vatsal', 'vatsal.ghoghari@dal.ca', '$2b$12$hBn2aqlqI3C6R5N4cp25/uiBlYc8iCKevshKtQz0Y0uuRDWokv3fm', 'Vatsal Ghoghari', 'USER', '#7C3AED');
+INSERT INTO "users" ("id", "email", "passwordHash", "name", "role", "avatarColor") VALUES ('user_marcus', 'marcus.bennett@ledgr.app', '$2b$12$hBn2aqlqI3C6R5N4cp25/uiBlYc8iCKevshKtQz0Y0uuRDWokv3fm', 'Marcus Bennett', 'USER', '#0EA5E9');
+INSERT INTO "users" ("id", "email", "passwordHash", "name", "role", "avatarColor") VALUES ('user_admin', 'admin@ledgr.app', '$2b$12$hBn2aqlqI3C6R5N4cp25/uiBlYc8iCKevshKtQz0Y0uuRDWokv3fm', 'LEDGR Admin', 'ADMIN', '#111827');
 
 -- categories (9 rows)
 INSERT INTO "categories" ("id", "userId", "name", "color", "icon", "parentId", "isDefault") VALUES ('cat_groceries', 'user_vatsal', 'Groceries', '#22C55E', 'shopping-cart', NULL, TRUE);

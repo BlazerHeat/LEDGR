@@ -8,6 +8,11 @@ This deployment implements the **Personal Ledger** feature (transactions) and th
 **authentication** endpoints. The full API surface for all three core features is specified in
 [`../docs/LEDGR-API-Design.md`](../docs/LEDGR-API-Design.md).
 
+> **Live API:** https://ledgr-api-w93g.onrender.com — interactive docs at
+> [`/docs`](https://ledgr-api-w93g.onrender.com/docs), health at
+> [`/healthz`](https://ledgr-api-w93g.onrender.com/healthz).
+> Hosted on Render's free tier, so the first request after ~15 min idle takes 30–50s to wake.
+
 ## Implemented endpoints
 
 | Method | Path | Auth | Purpose |

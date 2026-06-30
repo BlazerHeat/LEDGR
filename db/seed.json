@@ -3,7 +3,7 @@
     {
       "id": "user_vatsal",
       "email": "vatsal.ghoghari@dal.ca",
-      "passwordHash": "$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW",
+      "passwordHash": "$2b$12$hBn2aqlqI3C6R5N4cp25/uiBlYc8iCKevshKtQz0Y0uuRDWokv3fm",
       "name": "Vatsal Ghoghari",
       "role": "USER",
       "avatarColor": "#7C3AED"
@@ -11,7 +11,7 @@
     {
       "id": "user_marcus",
       "email": "marcus.bennett@ledgr.app",
-      "passwordHash": "$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW",
+      "passwordHash": "$2b$12$hBn2aqlqI3C6R5N4cp25/uiBlYc8iCKevshKtQz0Y0uuRDWokv3fm",
       "name": "Marcus Bennett",
       "role": "USER",
       "avatarColor": "#0EA5E9"
@@ -19,7 +19,7 @@
     {
       "id": "user_admin",
       "email": "admin@ledgr.app",
-      "passwordHash": "$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW",
+      "passwordHash": "$2b$12$hBn2aqlqI3C6R5N4cp25/uiBlYc8iCKevshKtQz0Y0uuRDWokv3fm",
       "name": "LEDGR Admin",
       "role": "ADMIN",
       "avatarColor": "#111827"

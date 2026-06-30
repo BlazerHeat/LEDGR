@@ -2,11 +2,11 @@
   "info": {
     "name": "LEDGR API",
     "_postman_id": "ledgr-api-csci5709",
-    "description": "LEDGR — Personal Ledger feature + supporting authentication.\n\nImplemented endpoints: register, login, me, list categories, create transaction, list transactions.\n\nUsage: set the `baseUrl` collection variable to your local (http://127.0.0.1:8000) or deployed URL. Run **Login (demo user)** first — its test script stores the JWT into `accessToken`, which the protected requests use automatically.\n\nDemo login: vatsal.ghoghari@dal.ca / Ledgr@2026",
+    "description": "LEDGR — Personal Ledger feature + supporting authentication.\n\nImplemented endpoints: register, login, me, list categories, create transaction, list transactions.\n\nLive base URL: https://ledgr-api-w93g.onrender.com (set as the default `baseUrl`). To run against a local server instead, change `baseUrl` to http://127.0.0.1:8000. Run **Login (demo user)** first — its test script stores the JWT into `accessToken`, which the protected requests use automatically.\n\nNote: the live service is on Render's free tier and sleeps after ~15 min idle; the first request may take 30–50s to wake it.\n\nDemo login: vatsal.ghoghari@dal.ca / Ledgr@2026",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
-    { "key": "baseUrl", "value": "http://127.0.0.1:8000", "type": "string" },
+    { "key": "baseUrl", "value": "https://ledgr-api-w93g.onrender.com", "type": "string" },
     { "key": "accessToken", "value": "", "type": "string" },
     { "key": "refreshToken", "value": "", "type": "string" },
     { "key": "categoryId", "value": "cat_groceries", "type": "string" }
