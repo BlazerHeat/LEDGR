@@ -82,8 +82,21 @@ render.yaml          Render Blueprint
    If `ledgr-api` is a subfolder, set **Root Directory** to `ledgr-api`.
 3. Add the `DATABASE_URL` and `DIRECT_URL` environment variables (Supabase pooler URLs).
    `JWT_SECRET` is generated automatically.
-4. Deploy. Render runs `pip install -r requirements.txt && python -m prisma generate`, then
-   `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. The health check path is `/healthz`.
+4. Deploy. Render runs
+   `pip install -r requirements.txt && python -m prisma py fetch && python -m prisma generate`,
+   then `uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Health check path: `/healthz`.
+
+### Prisma engine binary on Render (important)
+
+The Prisma query-engine binary downloaded during build must still be present at runtime. Render's
+default cache (`~/.cache` = `/opt/render/.cache`) is **not** carried into the run container, which
+causes `prisma.engine.errors.BinaryNotFoundError` at startup. The Blueprint fixes this by setting
+`PRISMA_BINARY_CACHE_DIR=/opt/render/project/src/.prisma-engine` (a path inside the persisted
+project directory) and running `python -m prisma py fetch` in the build command.
+
+If you configured the service **manually** instead of via the Blueprint, replicate both:
+* **Build Command:** `pip install -r requirements.txt && python -m prisma py fetch && python -m prisma generate`
+* **Environment variable:** `PRISMA_BINARY_CACHE_DIR` = `/opt/render/project/src/.prisma-engine`
 
 ## DB source files
 

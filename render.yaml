@@ -2,6 +2,12 @@
 # Deploy: push this repo to GitHub, then on Render choose "New +" -> "Blueprint"
 # and point it at the repo. Set DATABASE_URL and DIRECT_URL in the dashboard
 # (they are marked sync:false so they are never committed).
+#
+# PRISMA_BINARY_CACHE_DIR pins the Prisma query-engine binary inside the
+# project directory (which persists from build to runtime). Render's default
+# ~/.cache (/opt/render/.cache) is NOT carried into the run container, which
+# otherwise causes "BinaryNotFoundError" at application startup. The build
+# step fetches the engine into that dir; the runtime reads it from the same dir.
 
 services:
   - type: web
@@ -9,13 +15,15 @@ services:
     runtime: python
     plan: free
     region: oregon
-    buildCommand: "pip install -r requirements.txt && python -m prisma generate"
+    buildCommand: "pip install -r requirements.txt && python -m prisma py fetch && python -m prisma generate"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     healthCheckPath: /healthz
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.7"
+      - key: PRISMA_BINARY_CACHE_DIR
+        value: "/opt/render/project/src/.prisma-engine"
       - key: DATABASE_URL
         sync: false
       - key: DIRECT_URL
