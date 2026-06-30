@@ -1,0 +1,1389 @@
+{
+  "users": [
+    {
+      "id": "user_vatsal",
+      "email": "vatsal.ghoghari@dal.ca",
+      "passwordHash": "$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW",
+      "name": "Vatsal Ghoghari",
+      "role": "USER",
+      "avatarColor": "#7C3AED"
+    },
+    {
+      "id": "user_marcus",
+      "email": "marcus.bennett@ledgr.app",
+      "passwordHash": "$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW",
+      "name": "Marcus Bennett",
+      "role": "USER",
+      "avatarColor": "#0EA5E9"
+    },
+    {
+      "id": "user_admin",
+      "email": "admin@ledgr.app",
+      "passwordHash": "$2b$12$Ck11eoZK3uYHb5t.bXVOhuHgJBEwRiLz3oTemL/eDfkvmVrthNRMW",
+      "name": "LEDGR Admin",
+      "role": "ADMIN",
+      "avatarColor": "#111827"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_groceries",
+      "userId": "user_vatsal",
+      "name": "Groceries",
+      "color": "#22C55E",
+      "icon": "shopping-cart",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_dining",
+      "userId": "user_vatsal",
+      "name": "Dining out",
+      "color": "#F59E0B",
+      "icon": "utensils",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_transit",
+      "userId": "user_vatsal",
+      "name": "Transit",
+      "color": "#3B82F6",
+      "icon": "bus",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_housing",
+      "userId": "user_vatsal",
+      "name": "Housing",
+      "color": "#8B5CF6",
+      "icon": "home",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_utilities",
+      "userId": "user_vatsal",
+      "name": "Utilities",
+      "color": "#06B6D4",
+      "icon": "bolt",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_shopping",
+      "userId": "user_vatsal",
+      "name": "Shopping",
+      "color": "#EC4899",
+      "icon": "bag",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_entertainment",
+      "userId": "user_vatsal",
+      "name": "Entertainment",
+      "color": "#6366F1",
+      "icon": "film",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_income",
+      "userId": "user_vatsal",
+      "name": "Income",
+      "color": "#10B981",
+      "icon": "wallet",
+      "parentId": null,
+      "isDefault": true
+    },
+    {
+      "id": "cat_coffee",
+      "userId": "user_vatsal",
+      "name": "Coffee",
+      "color": "#A16207",
+      "icon": "coffee",
+      "parentId": "cat_dining",
+      "isDefault": false
+    }
+  ],
+  "budgets": [
+    {
+      "id": "bud_groceries",
+      "userId": "user_vatsal",
+      "categoryId": "cat_groceries",
+      "month": "2026-06",
+      "targetAmount": 400.0,
+      "rolloverEnabled": true
+    },
+    {
+      "id": "bud_dining",
+      "userId": "user_vatsal",
+      "categoryId": "cat_dining",
+      "month": "2026-06",
+      "targetAmount": 200.0,
+      "rolloverEnabled": true
+    },
+    {
+      "id": "bud_transit",
+      "userId": "user_vatsal",
+      "categoryId": "cat_transit",
+      "month": "2026-06",
+      "targetAmount": 120.0,
+      "rolloverEnabled": false
+    },
+    {
+      "id": "bud_housing",
+      "userId": "user_vatsal",
+      "categoryId": "cat_housing",
+      "month": "2026-06",
+      "targetAmount": 700.0,
+      "rolloverEnabled": false
+    },
+    {
+      "id": "bud_utilities",
+      "userId": "user_vatsal",
+      "categoryId": "cat_utilities",
+      "month": "2026-06",
+      "targetAmount": 150.0,
+      "rolloverEnabled": true
+    }
+  ],
+  "receipts": [
+    {
+      "id": "rcp_sobeys",
+      "userId": "user_vatsal",
+      "merchant": "Sobeys",
+      "date": "2026-06-09T12:00:00+00:00",
+      "subtotal": 42.12,
+      "tax": 2.52,
+      "total": 44.64,
+      "imageUrl": null,
+      "source": "OCR",
+      "status": "CONFIRMED"
+    }
+  ],
+  "receipt_line_items": [
+    {
+      "id": "rli_milk",
+      "receiptId": "rcp_sobeys",
+      "label": "Milk 2L",
+      "amount": 5.49,
+      "quantity": 1
+    },
+    {
+      "id": "rli_eggs",
+      "receiptId": "rcp_sobeys",
+      "label": "Eggs (dozen)",
+      "amount": 4.29,
+      "quantity": 1
+    },
+    {
+      "id": "rli_shampoo",
+      "receiptId": "rcp_sobeys",
+      "label": "Shampoo",
+      "amount": 8.99,
+      "quantity": 1
+    },
+    {
+      "id": "rli_pasta",
+      "receiptId": "rcp_sobeys",
+      "label": "Pasta x3",
+      "amount": 6.57,
+      "quantity": 3
+    },
+    {
+      "id": "rli_bars",
+      "receiptId": "rcp_sobeys",
+      "label": "Rahul's protein bars",
+      "amount": 12.99,
+      "quantity": 1
+    },
+    {
+      "id": "rli_soap",
+      "receiptId": "rcp_sobeys",
+      "label": "Dish soap",
+      "amount": 3.79,
+      "quantity": 1
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_0001",
+      "userId": "user_vatsal",
+      "type": "INCOME",
+      "amount": 1240.0,
+      "vendor": "Payroll deposit",
+      "categoryId": "cat_income",
+      "date": "2026-01-01T12:00:00+00:00",
+      "paymentMethod": "DIRECT_DEPOSIT",
+      "note": "Bi-weekly salary",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0002",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 650.0,
+      "vendor": "Apartment 4B Rent",
+      "categoryId": "cat_housing",
+      "date": "2026-01-01T12:00:00+00:00",
+      "paymentMethod": "E_TRANSFER",
+      "note": "Shared rent",
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0003",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 75.4,
+      "vendor": "Atlantic Superstore",
+      "categoryId": "cat_groceries",
+      "date": "2026-01-03T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0004",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 88.1,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-01-06T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0005",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 36.5,
+      "vendor": "Pete's Frootique",
+      "categoryId": "cat_groceries",
+      "date": "2026-01-09T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0006",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.2,
+      "vendor": "The Bicycle Thief",
+      "categoryId": "cat_dining",
+      "date": "2026-01-12T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0007",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 24.75,
+      "vendor": "Cabin Coffee",
+      "categoryId": "cat_coffee",
+      "date": "2026-01-15T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0008",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.0,
+      "vendor": "Halifax Transit",
+      "categoryId": "cat_transit",
+      "date": "2026-01-18T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0009",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.1,
+      "vendor": "Nova Scotia Power",
+      "categoryId": "cat_utilities",
+      "date": "2026-01-21T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0010",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.9,
+      "vendor": "Eastlink Internet",
+      "categoryId": "cat_utilities",
+      "date": "2026-01-24T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0011",
+      "userId": "user_vatsal",
+      "type": "INCOME",
+      "amount": 1240.0,
+      "vendor": "Payroll deposit",
+      "categoryId": "cat_income",
+      "date": "2026-02-01T12:00:00+00:00",
+      "paymentMethod": "DIRECT_DEPOSIT",
+      "note": "Bi-weekly salary",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0012",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 650.0,
+      "vendor": "Apartment 4B Rent",
+      "categoryId": "cat_housing",
+      "date": "2026-02-01T12:00:00+00:00",
+      "paymentMethod": "E_TRANSFER",
+      "note": "Shared rent",
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0013",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 75.4,
+      "vendor": "Atlantic Superstore",
+      "categoryId": "cat_groceries",
+      "date": "2026-02-03T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0014",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 88.1,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-02-06T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0015",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 36.5,
+      "vendor": "Pete's Frootique",
+      "categoryId": "cat_groceries",
+      "date": "2026-02-09T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0016",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.2,
+      "vendor": "The Bicycle Thief",
+      "categoryId": "cat_dining",
+      "date": "2026-02-12T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0017",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 24.75,
+      "vendor": "Cabin Coffee",
+      "categoryId": "cat_coffee",
+      "date": "2026-02-15T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0018",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.0,
+      "vendor": "Halifax Transit",
+      "categoryId": "cat_transit",
+      "date": "2026-02-18T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0019",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.1,
+      "vendor": "Nova Scotia Power",
+      "categoryId": "cat_utilities",
+      "date": "2026-02-21T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0020",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.9,
+      "vendor": "Eastlink Internet",
+      "categoryId": "cat_utilities",
+      "date": "2026-02-24T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0021",
+      "userId": "user_vatsal",
+      "type": "INCOME",
+      "amount": 1240.0,
+      "vendor": "Payroll deposit",
+      "categoryId": "cat_income",
+      "date": "2026-03-01T12:00:00+00:00",
+      "paymentMethod": "DIRECT_DEPOSIT",
+      "note": "Bi-weekly salary",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0022",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 650.0,
+      "vendor": "Apartment 4B Rent",
+      "categoryId": "cat_housing",
+      "date": "2026-03-01T12:00:00+00:00",
+      "paymentMethod": "E_TRANSFER",
+      "note": "Shared rent",
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0023",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 75.4,
+      "vendor": "Atlantic Superstore",
+      "categoryId": "cat_groceries",
+      "date": "2026-03-03T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0024",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 88.1,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-03-06T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0025",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 36.5,
+      "vendor": "Pete's Frootique",
+      "categoryId": "cat_groceries",
+      "date": "2026-03-09T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0026",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.2,
+      "vendor": "The Bicycle Thief",
+      "categoryId": "cat_dining",
+      "date": "2026-03-12T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0027",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 24.75,
+      "vendor": "Cabin Coffee",
+      "categoryId": "cat_coffee",
+      "date": "2026-03-15T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0028",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.0,
+      "vendor": "Halifax Transit",
+      "categoryId": "cat_transit",
+      "date": "2026-03-18T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0029",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.1,
+      "vendor": "Nova Scotia Power",
+      "categoryId": "cat_utilities",
+      "date": "2026-03-21T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0030",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.9,
+      "vendor": "Eastlink Internet",
+      "categoryId": "cat_utilities",
+      "date": "2026-03-24T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0031",
+      "userId": "user_vatsal",
+      "type": "INCOME",
+      "amount": 1240.0,
+      "vendor": "Payroll deposit",
+      "categoryId": "cat_income",
+      "date": "2026-04-01T12:00:00+00:00",
+      "paymentMethod": "DIRECT_DEPOSIT",
+      "note": "Bi-weekly salary",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0032",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 650.0,
+      "vendor": "Apartment 4B Rent",
+      "categoryId": "cat_housing",
+      "date": "2026-04-01T12:00:00+00:00",
+      "paymentMethod": "E_TRANSFER",
+      "note": "Shared rent",
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0033",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 75.4,
+      "vendor": "Atlantic Superstore",
+      "categoryId": "cat_groceries",
+      "date": "2026-04-03T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0034",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 88.1,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-04-06T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0035",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 36.5,
+      "vendor": "Pete's Frootique",
+      "categoryId": "cat_groceries",
+      "date": "2026-04-09T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0036",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.2,
+      "vendor": "The Bicycle Thief",
+      "categoryId": "cat_dining",
+      "date": "2026-04-12T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0037",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 24.75,
+      "vendor": "Cabin Coffee",
+      "categoryId": "cat_coffee",
+      "date": "2026-04-15T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0038",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.0,
+      "vendor": "Halifax Transit",
+      "categoryId": "cat_transit",
+      "date": "2026-04-18T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0039",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.1,
+      "vendor": "Nova Scotia Power",
+      "categoryId": "cat_utilities",
+      "date": "2026-04-21T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0040",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.9,
+      "vendor": "Eastlink Internet",
+      "categoryId": "cat_utilities",
+      "date": "2026-04-24T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0041",
+      "userId": "user_vatsal",
+      "type": "INCOME",
+      "amount": 1240.0,
+      "vendor": "Payroll deposit",
+      "categoryId": "cat_income",
+      "date": "2026-05-01T12:00:00+00:00",
+      "paymentMethod": "DIRECT_DEPOSIT",
+      "note": "Bi-weekly salary",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0042",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 650.0,
+      "vendor": "Apartment 4B Rent",
+      "categoryId": "cat_housing",
+      "date": "2026-05-01T12:00:00+00:00",
+      "paymentMethod": "E_TRANSFER",
+      "note": "Shared rent",
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0043",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 75.4,
+      "vendor": "Atlantic Superstore",
+      "categoryId": "cat_groceries",
+      "date": "2026-05-03T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0044",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 88.1,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-05-06T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0045",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 36.5,
+      "vendor": "Pete's Frootique",
+      "categoryId": "cat_groceries",
+      "date": "2026-05-09T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0046",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.2,
+      "vendor": "The Bicycle Thief",
+      "categoryId": "cat_dining",
+      "date": "2026-05-12T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0047",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 24.75,
+      "vendor": "Cabin Coffee",
+      "categoryId": "cat_coffee",
+      "date": "2026-05-15T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0048",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.0,
+      "vendor": "Halifax Transit",
+      "categoryId": "cat_transit",
+      "date": "2026-05-18T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0049",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.1,
+      "vendor": "Nova Scotia Power",
+      "categoryId": "cat_utilities",
+      "date": "2026-05-21T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0050",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.9,
+      "vendor": "Eastlink Internet",
+      "categoryId": "cat_utilities",
+      "date": "2026-05-24T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0051",
+      "userId": "user_vatsal",
+      "type": "INCOME",
+      "amount": 1240.0,
+      "vendor": "Payroll deposit",
+      "categoryId": "cat_income",
+      "date": "2026-06-01T12:00:00+00:00",
+      "paymentMethod": "DIRECT_DEPOSIT",
+      "note": "Bi-weekly salary",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0052",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 650.0,
+      "vendor": "Apartment 4B Rent",
+      "categoryId": "cat_housing",
+      "date": "2026-06-01T12:00:00+00:00",
+      "paymentMethod": "E_TRANSFER",
+      "note": "June rent \u2014 Apartment 4B",
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0053",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 84.2,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-06-09T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0054",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 92.3,
+      "vendor": "Atlantic Superstore",
+      "categoryId": "cat_groceries",
+      "date": "2026-06-14T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0055",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 75.4,
+      "vendor": "Sobeys",
+      "categoryId": "cat_groceries",
+      "date": "2026-06-21T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0056",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 64.1,
+      "vendor": "Pete's Frootique",
+      "categoryId": "cat_groceries",
+      "date": "2026-06-27T12:00:00+00:00",
+      "paymentMethod": "DEBIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0057",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 52.4,
+      "vendor": "The Bicycle Thief",
+      "categoryId": "cat_dining",
+      "date": "2026-06-06T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0058",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 38.6,
+      "vendor": "Darrell's",
+      "categoryId": "cat_dining",
+      "date": "2026-06-12T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0059",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 59.0,
+      "vendor": "Doraku Sushi",
+      "categoryId": "cat_dining",
+      "date": "2026-06-18T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0060",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 64.0,
+      "vendor": "Salty's",
+      "categoryId": "cat_dining",
+      "date": "2026-06-24T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0061",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.0,
+      "vendor": "Halifax Transit",
+      "categoryId": "cat_transit",
+      "date": "2026-06-05T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": "Monthly transit pass",
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0062",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 41.1,
+      "vendor": "Nova Scotia Power",
+      "categoryId": "cat_utilities",
+      "date": "2026-06-02T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0063",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 78.9,
+      "vendor": "Eastlink Internet",
+      "categoryId": "cat_utilities",
+      "date": "2026-06-02T12:00:00+00:00",
+      "paymentMethod": "PRE_AUTH",
+      "note": null,
+      "isShared": true,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0064",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 129.99,
+      "vendor": "Amazon",
+      "categoryId": "cat_shopping",
+      "date": "2026-06-15T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    },
+    {
+      "id": "txn_0065",
+      "userId": "user_vatsal",
+      "type": "EXPENSE",
+      "amount": 16.99,
+      "vendor": "Netflix",
+      "categoryId": "cat_entertainment",
+      "date": "2026-06-20T12:00:00+00:00",
+      "paymentMethod": "CREDIT_CARD",
+      "note": null,
+      "isShared": false,
+      "splitId": null,
+      "receiptId": null
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_apt4b",
+      "name": "Apartment 4B",
+      "ownerId": "user_vatsal",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "grp_cabin",
+      "name": "Cabin Trip 2026",
+      "ownerId": "user_vatsal",
+      "status": "ACTIVE"
+    }
+  ],
+  "group_members": [
+    {
+      "id": "gm_apt_vatsal",
+      "groupId": "grp_apt4b",
+      "userId": "user_vatsal",
+      "displayName": "Vatsal",
+      "avatarColor": "#7C3AED",
+      "role": "OWNER"
+    },
+    {
+      "id": "gm_apt_rahul",
+      "groupId": "grp_apt4b",
+      "userId": null,
+      "displayName": "Rahul",
+      "avatarColor": "#06B6D4",
+      "role": "MEMBER"
+    },
+    {
+      "id": "gm_apt_anik",
+      "groupId": "grp_apt4b",
+      "userId": null,
+      "displayName": "Anik",
+      "avatarColor": "#F59E0B",
+      "role": "MEMBER"
+    },
+    {
+      "id": "gm_cab_vatsal",
+      "groupId": "grp_cabin",
+      "userId": "user_vatsal",
+      "displayName": "Vatsal",
+      "avatarColor": "#7C3AED",
+      "role": "OWNER"
+    },
+    {
+      "id": "gm_cab_jordan",
+      "groupId": "grp_cabin",
+      "userId": null,
+      "displayName": "Jordan",
+      "avatarColor": "#06B6D4",
+      "role": "MEMBER"
+    },
+    {
+      "id": "gm_cab_sam",
+      "groupId": "grp_cabin",
+      "userId": null,
+      "displayName": "Sam",
+      "avatarColor": "#F59E0B",
+      "role": "MEMBER"
+    },
+    {
+      "id": "gm_cab_dana",
+      "groupId": "grp_cabin",
+      "userId": null,
+      "displayName": "Dana",
+      "avatarColor": "#EC4899",
+      "role": "MEMBER"
+    }
+  ],
+  "splits": [
+    {
+      "id": "spl_sobeys",
+      "groupId": "grp_apt4b",
+      "receiptId": "rcp_sobeys",
+      "createdById": "user_vatsal",
+      "title": "Sobeys (grocery run)",
+      "mode": "ITEMISED",
+      "subtotal": 42.12,
+      "tax": 2.52,
+      "total": 44.64,
+      "taxAllocation": "PROPORTIONAL",
+      "date": "2026-06-09T12:00:00+00:00"
+    }
+  ],
+  "split_items": [
+    {
+      "id": "si_milk",
+      "splitId": "spl_sobeys",
+      "label": "Milk 2L",
+      "amount": 5.49,
+      "quantity": 1
+    },
+    {
+      "id": "si_eggs",
+      "splitId": "spl_sobeys",
+      "label": "Eggs (dozen)",
+      "amount": 4.29,
+      "quantity": 1
+    },
+    {
+      "id": "si_shampoo",
+      "splitId": "spl_sobeys",
+      "label": "Shampoo",
+      "amount": 8.99,
+      "quantity": 1
+    },
+    {
+      "id": "si_pasta",
+      "splitId": "spl_sobeys",
+      "label": "Pasta x3",
+      "amount": 6.57,
+      "quantity": 3
+    },
+    {
+      "id": "si_bars",
+      "splitId": "spl_sobeys",
+      "label": "Rahul's protein bars",
+      "amount": 12.99,
+      "quantity": 1
+    },
+    {
+      "id": "si_soap",
+      "splitId": "spl_sobeys",
+      "label": "Dish soap",
+      "amount": 3.79,
+      "quantity": 1
+    }
+  ],
+  "split_item_shares": [
+    {
+      "id": "sis_si_milk_vatsal",
+      "splitItemId": "si_milk",
+      "memberId": "gm_apt_vatsal",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_milk_rahul",
+      "splitItemId": "si_milk",
+      "memberId": "gm_apt_rahul",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_milk_anik",
+      "splitItemId": "si_milk",
+      "memberId": "gm_apt_anik",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_eggs_vatsal",
+      "splitItemId": "si_eggs",
+      "memberId": "gm_apt_vatsal",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_eggs_rahul",
+      "splitItemId": "si_eggs",
+      "memberId": "gm_apt_rahul",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_eggs_anik",
+      "splitItemId": "si_eggs",
+      "memberId": "gm_apt_anik",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_pasta_vatsal",
+      "splitItemId": "si_pasta",
+      "memberId": "gm_apt_vatsal",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_pasta_rahul",
+      "splitItemId": "si_pasta",
+      "memberId": "gm_apt_rahul",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_pasta_anik",
+      "splitItemId": "si_pasta",
+      "memberId": "gm_apt_anik",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_soap_vatsal",
+      "splitItemId": "si_soap",
+      "memberId": "gm_apt_vatsal",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_soap_rahul",
+      "splitItemId": "si_soap",
+      "memberId": "gm_apt_rahul",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_soap_anik",
+      "splitItemId": "si_soap",
+      "memberId": "gm_apt_anik",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_shampoo_vatsal",
+      "splitItemId": "si_shampoo",
+      "memberId": "gm_apt_vatsal",
+      "weight": 1.0
+    },
+    {
+      "id": "sis_si_bars_rahul",
+      "splitItemId": "si_bars",
+      "memberId": "gm_apt_rahul",
+      "weight": 1.0
+    }
+  ],
+  "split_participant_shares": [
+    {
+      "id": "sps_vatsal",
+      "splitId": "spl_sobeys",
+      "memberId": "gm_apt_vatsal",
+      "amount": 10.55
+    },
+    {
+      "id": "sps_rahul",
+      "splitId": "spl_sobeys",
+      "memberId": "gm_apt_rahul",
+      "amount": 23.54
+    },
+    {
+      "id": "sps_anik",
+      "splitId": "spl_sobeys",
+      "memberId": "gm_apt_anik",
+      "amount": 10.55
+    }
+  ],
+  "settlements": [
+    {
+      "id": "set_jordan",
+      "groupId": "grp_cabin",
+      "fromMemberId": "gm_cab_jordan",
+      "toMemberId": "gm_cab_vatsal",
+      "amount": 182.5,
+      "status": "PENDING",
+      "settledAt": null
+    },
+    {
+      "id": "set_sam",
+      "groupId": "grp_cabin",
+      "fromMemberId": "gm_cab_sam",
+      "toMemberId": "gm_cab_vatsal",
+      "amount": 96.0,
+      "status": "PENDING",
+      "settledAt": null
+    },
+    {
+      "id": "set_dana",
+      "groupId": "grp_cabin",
+      "fromMemberId": "gm_cab_vatsal",
+      "toMemberId": "gm_cab_dana",
+      "amount": 54.25,
+      "status": "PENDING",
+      "settledAt": null
+    }
+  ]
+}

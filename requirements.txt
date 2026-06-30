@@ -1,0 +1,7 @@
+fastapi==0.129.0
+uvicorn[standard]==0.40.0
+prisma==0.15.0
+bcrypt==5.0.0
+PyJWT==2.12.1
+pydantic-settings==2.14.2
+python-multipart>=0.0.9

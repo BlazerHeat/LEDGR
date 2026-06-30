@@ -1,0 +1,201 @@
+{
+  "info": {
+    "name": "LEDGR API",
+    "_postman_id": "ledgr-api-csci5709",
+    "description": "LEDGR — Personal Ledger feature + supporting authentication.\n\nImplemented endpoints: register, login, me, list categories, create transaction, list transactions.\n\nUsage: set the `baseUrl` collection variable to your local (http://127.0.0.1:8000) or deployed URL. Run **Login (demo user)** first — its test script stores the JWT into `accessToken`, which the protected requests use automatically.\n\nDemo login: vatsal.ghoghari@dal.ca / Ledgr@2026",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:8000", "type": "string" },
+    { "key": "accessToken", "value": "", "type": "string" },
+    { "key": "refreshToken", "value": "", "type": "string" },
+    { "key": "categoryId", "value": "cat_groceries", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "0. Health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/healthz", "host": ["{{baseUrl}}"], "path": ["healthz"] },
+        "description": "Liveness probe. Expect 200 with database: connected."
+      }
+    },
+    {
+      "name": "1. Register (new user)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('201 Created', () => pm.response.code === 201);",
+              "const b = pm.response.json();",
+              "if (b.access_token) { pm.collectionVariables.set('accessToken', b.access_token); }",
+              "if (b.refresh_token) { pm.collectionVariables.set('refreshToken', b.refresh_token); }"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"new.user@example.com\",\n  \"password\": \"S3cur3pass!\",\n  \"name\": \"New User\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "register"] },
+        "description": "Creates a user, seeds default categories, returns JWT access + refresh tokens. Re-running with the same email returns 409 EMAIL_TAKEN."
+      }
+    },
+    {
+      "name": "2. Login (demo user)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('200 OK', () => pm.response.code === 200);",
+              "const b = pm.response.json();",
+              "pm.collectionVariables.set('accessToken', b.access_token);",
+              "pm.collectionVariables.set('refreshToken', b.refresh_token);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"vatsal.ghoghari@dal.ca\",\n  \"password\": \"Ledgr@2026\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] },
+        "description": "Authenticates the seeded demo user and stores the JWT into the accessToken variable. RUN THIS FIRST."
+      }
+    },
+    {
+      "name": "3. Login - wrong password (401)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"vatsal.ghoghari@dal.ca\",\n  \"password\": \"wrongpassword\"\n}" },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] },
+        "description": "AUTH FAILURE demo. Expect 401 INVALID_CREDENTIALS with a generic message (no email enumeration)."
+      }
+    },
+    {
+      "name": "4. Get current user (auth success)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/me", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "me"] },
+        "description": "Returns the authenticated user. Expect 200."
+      }
+    },
+    {
+      "name": "5. Get current user - NO token (401)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/me", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "me"] },
+        "description": "AUTH FAILURE demo. No Authorization header. Expect 401 UNAUTHORIZED."
+      }
+    },
+    {
+      "name": "6. List categories",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+        "url": { "raw": "{{baseUrl}}/api/v1/categories", "host": ["{{baseUrl}}"], "path": ["api", "v1", "categories"] },
+        "description": "Lists the user's categories (use a returned id as categoryId when creating a transaction)."
+      }
+    },
+    {
+      "name": "7. Create transaction (success)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('201 Created', () => pm.response.code === 201);",
+              "pm.test('persisted with id', () => pm.response.json().id !== undefined);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"type\": \"EXPENSE\",\n  \"amount\": 84.20,\n  \"vendor\": \"Sobeys\",\n  \"categoryId\": \"{{categoryId}}\",\n  \"date\": \"2026-06-09\",\n  \"paymentMethod\": \"DEBIT_CARD\",\n  \"note\": \"Weekly groceries\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/transactions", "host": ["{{baseUrl}}"], "path": ["api", "v1", "transactions"] },
+        "description": "GRADED ENDPOINT 1. Creates and persists a transaction. Expect 201 with the created record (including the nested category)."
+      }
+    },
+    {
+      "name": "8. Create transaction - invalid (422)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"type\": \"EXPENSE\",\n  \"amount\": -5,\n  \"vendor\": \"\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/transactions", "host": ["{{baseUrl}}"], "path": ["api", "v1", "transactions"] },
+        "description": "VALIDATION demo. Negative amount + empty vendor. Expect 422 VALIDATION_ERROR with a per-field details array."
+      }
+    },
+    {
+      "name": "9. Create transaction - NO token (401)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"type\": \"EXPENSE\",\n  \"amount\": 12.50,\n  \"vendor\": \"Tim Hortons\"\n}" },
+        "url": { "raw": "{{baseUrl}}/api/v1/transactions", "host": ["{{baseUrl}}"], "path": ["api", "v1", "transactions"] },
+        "description": "AUTH FAILURE demo. Expect 401 UNAUTHORIZED."
+      }
+    },
+    {
+      "name": "10. List transactions (all)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+        "url": { "raw": "{{baseUrl}}/api/v1/transactions", "host": ["{{baseUrl}}"], "path": ["api", "v1", "transactions"] },
+        "description": "GRADED ENDPOINT 2. Returns the user's transactions with pagination + summary. Proves persistence."
+      }
+    },
+    {
+      "name": "11. List transactions (filter + search + sort)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{accessToken}}" }],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/transactions?type=EXPENSE&from=2026-06-01&to=2026-06-30&q=sobeys&sort=-amount&page=1&limit=10",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "transactions"],
+          "query": [
+            { "key": "type", "value": "EXPENSE" },
+            { "key": "from", "value": "2026-06-01" },
+            { "key": "to", "value": "2026-06-30" },
+            { "key": "q", "value": "sobeys" },
+            { "key": "sort", "value": "-amount" },
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "10" }
+          ]
+        },
+        "description": "Filter by type + date range, full-text search on vendor/note, sorted by amount descending, paginated."
+      }
+    }
+  ]
+}
