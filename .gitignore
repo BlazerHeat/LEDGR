@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Env / secrets
+.env
+.env.local
+
+# Prisma generated client (regenerated via `prisma generate`)
+# (kept out of VCS; CI/Render runs `prisma generate` at build time)
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
